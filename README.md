@@ -2,5 +2,6 @@
 
 Electricity monitor firmware for the Kingswood monitoring system.
 
-MCU: ESP8266
-OS: Ardiono
+**MCU**: ESP8266
+
+**OS**: Ardiono
