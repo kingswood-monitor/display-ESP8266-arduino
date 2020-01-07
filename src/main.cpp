@@ -17,6 +17,7 @@
 #define LED2 16 // Red  Onboard LED next to USB port
 
 #define FIRMWARE_VERSION 1.0
+#define FIRMWARE_NAME "display-energy-NODEMCUDEVKIT-arduino"
 
 char *deviceID();
 void start_wifi();
