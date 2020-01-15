@@ -41,11 +41,9 @@ const char *ssid = "Kingswood";
 const char *password = "wbtc0rar";
 
 // MQTT config
-IPAddress mqtt_server(192, 168, 1, 106); // EmonHub server ip
-const char *mqtt_user = "emonpi";
-const char *mqtt_passwd = "emonpimqtt2016";
+IPAddress mqtt_server(192, 168, 1, 30); // EmonHub server ip
 
-char *powerTopic = "emon/kingswood/power";
+char *powerTopic = "31/data/power";
 char *powerMonitorStatusTopic = "emon/kingswood/monitor/status";
 char *powerMonitorMaxPowerTopic = "emon/kingswood/monitor/maxpower";
 char *powerMonitorMinPowerTopic = "emon/kingswood/monitor/minpower";
@@ -182,7 +180,7 @@ void reconnect()
     String clientId = "ESP8266Client-";
     clientId += String(random(0xffff), HEX);
     // Attempt to connect
-    if (client.connect(clientId.c_str(), mqtt_user, mqtt_passwd, powerMonitorStatusTopic, 1, true, "OFFLINE"))
+    if (client.connect(clientId.c_str(), powerMonitorStatusTopic, 1, true, "OFFLINE"))
     {
       Serial.println("connected");
       // Once connected, publish an announcement...
